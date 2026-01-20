@@ -1,6 +1,6 @@
-import http  from "node:http"
+import http from "node:http"
 
-const server = http.createServer((request, response) => {
+const server = http.createServer(async (request, response) => {
   // object destructuring. É o mesmo que criar (const method = request.method)
   const { method, url } = request 
 
@@ -9,6 +9,14 @@ const server = http.createServer((request, response) => {
   }
 
   if (method === "POST" && url === "/products") {
+    const buffers = []
+
+    for await (const chunk of request) {
+      buffers.push(chunk)
+    }
+
+    console.log(Buffer.concat(buffers).toString())
+
     return response.writeHead(201).end("Produto cadastrado!")
   }
 
