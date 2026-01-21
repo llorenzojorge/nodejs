@@ -1,12 +1,1 @@
-{
-  "products": [
-    {
-      "name": "Mouse",
-      "price": 699.5
-    },
-    {
-      "name": "Teclado",
-      "price": 259
-    }
-  ]
-}
+{"products":[{"name":"Teclado","price":259},{"name":"Mouse","price":281},{"name":"Monitor","price":2121}]}
